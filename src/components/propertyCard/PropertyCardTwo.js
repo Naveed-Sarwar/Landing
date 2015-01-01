@@ -11,7 +11,7 @@ import ImgPopup from '../imgPopup/ImgPopup';
 
 
 const PropertyCardTwo = ({ img }) => {
-    console.log(img);
+    console.log("img" , img);
     const router = useRouter();
     const { property } = router.query;
     const [open, setOpen] = useState(false);
@@ -27,15 +27,19 @@ const PropertyCardTwo = ({ img }) => {
     return (
         <>
             <div className='lg:border-[1px] lg:w-[350px] relative hover:-mt-1 duration-200 ease-out'>
-                <div onClick={() => setOpen(!open)} className="cursor-pointer rounded-t-lg" >
-                    <img src={img?.src} />
-                    {/* <Image src={ImageHouse} /> */}
-                    {/* <Slider /> */}
+                <div onClick={()=> setOpen(!open)} className="cursor-pointer rounded-t-lg" >
+                {/* {selectedCard.image?.map((image, index) => (
+                <div key={index} className="image-container">
+                    <Image src={image.img} alt={`Image ${index}`} width={image.width} height={image.height} />
+                </div>
+            ))} */}
+            
+            <Slider images={selectedCard.image} />
                 </div>
                 <div className='px-4 '>
-                    <div className='flex -mt-16 lg:mt-2 justify-between items-center'>
+                    <div className='flex mt-4 lg:mt-2 justify-between items-center'>
                         <p className='font-semibold text-[#333333] text-[1.5rem]'>{selectedCard?.name}</p>
-                        <p className='bg-[#64c464] font-bold text-[0.875rem] h-7 w-16 rounded-md items-center flex justify-center text-white'>Open</p>
+                        <p className='bg-[#64c464] font-bold text-[0.875rem] h-7 w-16 rounded-md items-center cursor-pointer flex justify-center text-white'>Open</p>
                     </div>
                     <p className='pt-2'>{selectedCard?.location}</p>
                     <br />
@@ -61,7 +65,7 @@ const PropertyCardTwo = ({ img }) => {
                 </div>
             </div>
             {
-                open && <ImgPopup open={open} setOpen={setOpen} img={img?.src} />
+                open && <ImgPopup open={open} setOpen={setOpen} img={selectedCard.image} />
             }
         </>
     )

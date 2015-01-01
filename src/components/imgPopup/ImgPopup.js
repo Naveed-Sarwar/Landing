@@ -41,7 +41,7 @@ import ImgFive from "../../../assets/1.4.webp";
 // import ImgThirtyEight from "../../../assets/thirtyEight.jpg";
 // import ImgThirtyNine from "../../../assets/thirtyNine.jpg";
 
-const ImgPopup = ({ open, setOpen , img }) => {
+const ImgPopup = ({ open, setOpen, img }) => {
 
   const images = [
     { img: img },
@@ -84,12 +84,12 @@ const ImgPopup = ({ open, setOpen , img }) => {
     // { img: ImgThirtyEight },
     // { img: ImgThirtyNine },
   ]
-console.log(open);
+  console.log("hloe" , img);
   return (
     <div className='fixed inset-0 bg-white z-[100]  h-[auto] overflow-y-scroll '>
 
       <div onClick={() => setOpen(!open)} className='absolute cursor-pointer right-6 top-4'>
-        <RxCross2 fontSize={28}  claassName="cursor-pointer border-[1px] border-gray" />
+        <RxCross2 fontSize={28} claassName="cursor-pointer border-[1px] border-gray" />
       </div>
 
       <div className='w-9/12 pt-28 flex justify-center flex-col mx-auto overflow-scroll'>
@@ -100,10 +100,10 @@ console.log(open);
         {/* <Image src={ImgThree} className="cursor-pointer  rounded-[1rem]" /> */}
 
         {
-          images?.map((item) => {
+          img?.map((item) => {
             return <>
               <br />
-              <img src={item.img} className="cursor-pointer  rounded-[1rem]" />
+              <img src={item.img.src} className="cursor-pointer  rounded-[1rem]" />
             </>
           })
         }

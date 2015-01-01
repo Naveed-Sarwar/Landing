@@ -44,7 +44,7 @@ const Property = () => {
 
     const router = useRouter();
     const { property } = router.query;
-
+    console.log(property);
 
     const selectedIndex = parseInt(property);
 

@@ -14,6 +14,8 @@ module.exports = {
       backgroundImage: {
         "proper": "url('../../assets/property.jpeg')",
         "hill": "url('../../assets/propertyOne.webp')",
+        "stockOne": "url('../../assets/stocksOne.jpeg')",
+        "stockTwo": "url('../../assets/stocksTwo.webp')",
         "hillSecond": "url('../../assets/2.1.webp')",
         "hillThird": "url('../../assets/propertyThree.webp')",
 

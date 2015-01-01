@@ -4,7 +4,7 @@ import { HiMenu } from "react-icons/hi";
 import { RxCross1 } from 'react-icons/rx';
 import { BiSolidLandscape } from "react-icons/bi";
 import { BsFillPersonFill } from 'react-icons/bs';
-import { AiFillPropertySafety, AiTwotoneTool } from "react-icons/ai";
+import { AiFillPropertySafety, AiOutlineFire, AiOutlineStock, AiTwotoneTool } from "react-icons/ai";
 import { FaTools } from "react-icons/fa";
 import { FiDollarSign } from "react-icons/fi";
 import { SiArtixlinux } from "react-icons/si";
@@ -18,6 +18,8 @@ export const list = [
     { title: "On ramp a property", icon: <AiFillPropertySafety fontSize={24} />, route: "http://aasthi.ai" },
     { title: "Use Your Land", icon: <FaTools fontSize={22} />, route: "http://aasthi.ai/" },
     { title: "Build on Aasthi", icon: <AiTwotoneTool fontSize={24} />, route: "http://aasthi.ai" }
+   , { title: "Buy Stocks", icon: <AiOutlineStock fontSize={24} />, route: "stocks" },
+    { title: "Contest", icon: <AiOutlineFire  fontSize={24} />, route: "/contest" }
 ];
 
 
@@ -49,7 +51,7 @@ const Header = () => {
                     {
                         list?.map((item) => {
                             return <div className='flex flex-col  py-3 text-black rounded-md hover:bg-[#86b1f780]'>
-                                <Link target='_blank' href={`${item?.route}`}> <div className='flex ml-12  text-black gap-x-3 cursor-pointer'>   <p>{item.icon}</p> <p>{item.title}</p></div>
+                                <Link  href={`${item?.route}`}> <div className='flex ml-12  text-black gap-x-3 cursor-pointer'>   <p>{item.icon}</p> <p>{item.title}</p></div>
                                 </Link>  </div>
                         })
                     }

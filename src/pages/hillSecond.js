@@ -10,11 +10,12 @@ const HillSecond = () => {
     return (
         <>     <div className='bg-hillSecond flex flex-col justify-center h-[90vh] px-10 '>
           
-            <h1 className='text-white leading-[50px] font-extrabold text-[50px]'>AsanjA Titaly<br />
+            <h1 className='text-white leading-[50px] font-extrabold text-[50px]'>Pragati Resorts<br />
                 {/* <span className='pl-12'>CHASE HILLS</span> */}
             </h1>
-            <p className='text-white font-medium mt-12 text-2xl'>Nestled adjacent to 170 acres of a majestic championship golf,
+            {/* <p className='text-white font-medium mt-12 text-2xl'>Nestled adjacent to 170 acres of a majestic championship golf,
                 Botanica Oak Hills <br /> offers its residents true serenity and connection  to the surrounding landscape, <br /> while keeping them closely in touch with the big city.</p>
+      */}
         </div>
 
             <br />

@@ -30,7 +30,7 @@ const VacationRentals = () => {
           <p className='text-xl text-white'>Furnished properties rented out for shorter days (days , weeks or months) on platforms like AirBnb & VRBO. Diversity your portfolio with vacation rentals.</p>
         </div>
         <div className='order-1 lg:order-2'>
-          <Image src={House} />
+          <Image src={House} className='rounded-lg' />
         </div>
       </div>
 
@@ -60,7 +60,7 @@ const VacationRentals = () => {
               {/* <Link href={{ pathname: item.route }} key={index}> */}
               <div className='flex relative rounded-lg bg-white my-2'>
                 <div className='flex-auto h-64 w-32'>
-              <img src={item?.image?.src} className='h-64 w-full' />
+                  <img src={item?.image?.[0]?.img?.src} className='h-64 w-full' />
                   {/* {index == 0 ? <Image className='h-full' src={ImageHouse} /> : index == 1 ? <Image className='h-full' src={SecondCard} /> : index == 2 ? <Image className='h-full' src={ThirdCard} /> : index == 3 ? <Image className='h-full' src={FourCard} /> : index == 4 ? <Image className='h-full' src={FiveCard} /> : index == 5 ? <Image className='h-full object-cover' src={SixCard} /> : index == 6 ? <Image className='h-full' src={SevenCard} /> : index == 7 ? <Image className='h-full' src={EightCard} /> : index == 8 ? <Image className='h-full' src={NineCard} /> : <Image className='h-full' src={TenCard} />} */}
                 </div>
                 <div className='flex-auto pt-4 pl-4 w-64'>
@@ -97,12 +97,12 @@ const VacationRentals = () => {
               <Link href={{ pathname: item.route }} key={index}>
                 <div className='flex relative rounded-lg bg-white my-2'>
                   <div className='flex-auto h-64 w-32'>
-                  <img src={item?.image?.src} className='h-64 w-full' />
-       {/* {index == 0 ? <Image className='h-full' src={ImageHouse} /> : index == 1 ? <Image className='h-full' src={SecondCard} /> : index == 2 ? <Image className='h-full' src={ThirdCard} /> : index == 3 ? <Image className='h-full' src={FourCard} /> : index == 4 ? <Image className='h-full' src={FiveCard} /> : index == 5 ? <Image className='h-full object-cover' src={SixCard} /> : index == 6 ? <Image className='h-full' src={SevenCard} /> : index == 7 ? <Image className='h-full' src={EightCard} /> : index == 8 ? <Image className='h-full' src={NineCard} /> : <Image className='h-full' src={TenCard} />} */}
+                    <img src={item?.image?.src} className='h-64 w-full' />
+                    {/* {index == 0 ? <Image className='h-full' src={ImageHouse} /> : index == 1 ? <Image className='h-full' src={SecondCard} /> : index == 2 ? <Image className='h-full' src={ThirdCard} /> : index == 3 ? <Image className='h-full' src={FourCard} /> : index == 4 ? <Image className='h-full' src={FiveCard} /> : index == 5 ? <Image className='h-full object-cover' src={SixCard} /> : index == 6 ? <Image className='h-full' src={SevenCard} /> : index == 7 ? <Image className='h-full' src={EightCard} /> : index == 8 ? <Image className='h-full' src={NineCard} /> : <Image className='h-full' src={TenCard} />} */}
                   </div>
                   <div className='flex-auto pt-4 pl-4 w-64'>
                     <p className='text-lg'>RESIDENCIAL</p>
-                    <h1 className='text-4xl font-bold'>{item?.title}</h1>
+                    <h1 className='text-2xl lg:text-4xl font-bold'>{item?.title}</h1>
                     <div className='absolute bottom-8'>
                       <p className='text-sm text-[#8f8f8f]'>Description</p>
                       <p>We believe in a sustainable future where real estate enhances our lives and becomes a blueprint for better living. All financed using our Invest Web3 fundraising platform.</p>

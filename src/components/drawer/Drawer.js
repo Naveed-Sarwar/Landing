@@ -18,7 +18,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import SliderTwo from '@/components/slider/SliderTwo';
 import { BiSolidLandscape } from "react-icons/bi";
 import { BsFillPersonFill } from 'react-icons/bs';
-import { AiFillPropertySafety, AiTwotoneTool } from "react-icons/ai";
+import { AiFillPropertySafety, AiOutlineFire, AiOutlineStock, AiTwotoneTool } from "react-icons/ai";
 import { FaTools } from "react-icons/fa";
 import { FiDollarSign } from "react-icons/fi";
 import { SiArtixlinux } from "react-icons/si";
@@ -28,12 +28,15 @@ import Vacation from '@/components/VacationRentals';
 export const list = [
     // { title: "Invest", icon: <FiDollarSign fontSize={24} />, route: "https://property-page-blue.vercel.app/" },
     { title: "Property", icon: <FiDollarSign fontSize={24} />, route: "/property" },
-    { title: "Buy Land", icon: <BiSolidLandscape fontSize={24} />, route: "/Buy" },
+    { title: "Buy Land", icon: <BiSolidLandscape fontSize={24} />, route: "/buy" },
     { title: "Investment Analyzer", icon: <SiArtixlinux fontSize={24} />, route: "/Investment" },
     { title: "Portfolio", icon: <BsFillPersonFill fontSize={24} />, route: "https://profound-flea.10web.site/" },
     { title: "On ramp a property", icon: <AiFillPropertySafety fontSize={24} />, route: "http://aasthi.ai" },
     { title: "Use Your Land", icon: <FaTools fontSize={22} />, route: "http://aasthi.ai/" },
-    { title: "Build on Aasthi", icon: <AiTwotoneTool fontSize={24} />, route: "http://aasthi.ai" }
+    { title: "Build on Aasthi", icon: <AiTwotoneTool fontSize={24} />, route: "http://aasthi.ai" },
+    { title: "Buy Stocks", icon: <AiOutlineStock fontSize={24} />, route: "stocks" },
+    { title: "Contest", icon: <AiOutlineFire  fontSize={24} />, route: "/contest" }
+
 ];
 
 

@@ -9,7 +9,7 @@ import Arrow from "../../../assets/arrow.svg";
 import ArrowLeft from "../../../assets/arrow-left.svg";
 SwiperCore.use([Navigation]);
 
-const Slider = () => {
+const Slider = ({ images }) => {
 
     return (
         <div className='relative rounded-t-[5px]'>
@@ -21,10 +21,10 @@ const Slider = () => {
                 }}
                 pagination={{ clickable: true }}
                 loop
-                className="custom-navigation lg:h-auto h-72  lg:w-[350px] rounded-t-[5px]"
+                className="custom-navigation h-full lg:h-auto w-[100%] lg:w-[350px] rounded-t-[5px]"
 
             >
-          
+                {/*           
                 <SwiperSlide>
                     <Image src={Imge}  />
                 </SwiperSlide>
@@ -33,16 +33,18 @@ const Slider = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image src={Imge}  />
-                </SwiperSlide>
-
-                <div className="custom-swiper-button-next absolute cursor-pointer left-2 top-[25%] lg:top-[40%]  rounded-full z-10 w-14 h-14 p-3">
-                    {/* Insert your custom next arrow icon or element here */}
-                    <Image src={ArrowLeft} /> {/* <MdArrowBackIosNew    /> */}
+                </SwiperSlide> */}
+                {images?.map((image, index) => (
+                    <SwiperSlide key={index}>
+                        <Image className='w-full' src={image.img} />
+                    </SwiperSlide>
+                ))}
+                {/* <div className="custom-swiper-button-next absolute cursor-pointer left-2 top-[25%] lg:top-[40%]  rounded-full z-50 w-14 h-14 p-3">
+                    <Image src={ArrowLeft} className='custom-swiper-button-next' /> 
                 </div>
-                <div className="custom-swiper-button-prev absolute cursor-pointer right-2 top-[25%] lg:top-[40%]  rounded-full z-10 w-14 h-14 p-3">
-                    <Image src={Arrow} />  {/* Insert your custom previus arrow icon or element here */}
-
-                </div>
+                <div className="custom-swiper-button-prev absolute cursor-pointer right-2 top-[25%] lg:top-[40%]  rounded-full z-50 w-14 h-14 p-3">
+                    <Image src={Arrow} />  
+                </div> */}
             </Swiper>
         </div>
     );

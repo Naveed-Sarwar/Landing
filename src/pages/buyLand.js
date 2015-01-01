@@ -19,7 +19,7 @@ import Slider from '@/components/slider/Slider';
 import SliderTwo from '@/components/slider/SliderTwo';
 import { BiSolidLandscape } from "react-icons/bi";
 import { BsFillPersonFill } from 'react-icons/bs';
-import { AiFillPropertySafety, AiTwotoneTool } from "react-icons/ai";
+import { AiFillPropertySafety, AiOutlineFire, AiOutlineStock, AiTwotoneTool } from "react-icons/ai";
 import { FaTools } from "react-icons/fa";
 import { FiDollarSign } from "react-icons/fi";
 import { SiArtixlinux } from "react-icons/si";
@@ -33,7 +33,10 @@ export const list = [
     { title: "Portfolio", icon: <BsFillPersonFill fontSize={24} />, route: "https://profound-flea.10web.site/" },
     { title: "On ramp a property", icon: <AiFillPropertySafety fontSize={24} />, route: "http://aasthi.ai" },
     { title: "Use Your Land", icon: <FaTools fontSize={22} />, route: "http://aasthi.ai/" },
-    { title: "Build on Aasthi", icon: <AiTwotoneTool fontSize={24} />, route: "http://aasthi.ai" }
+    { title: "Build on Aasthi", icon: <AiTwotoneTool fontSize={24} />, route: "http://aasthi.ai" },
+    { title: "Buy Stocks", icon: <AiOutlineStock fontSize={24} />, route: "stocks" },
+    { title: "Contest", icon: <AiOutlineFire  fontSize={24} />, route: "/contest" }
+
 ];
 
 

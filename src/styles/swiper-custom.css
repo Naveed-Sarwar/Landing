@@ -13,7 +13,7 @@
 /* Hide default navigation arrows */
 .swiper-container:not(.custom-navigation) .swiper-button-next,
 .swiper-container:not(.custom-navigation) .swiper-button-prev {
-  display: none !important;
+display: none !important;
 width: 310px !important; 
 height: auto !important;
 position: relative;
@@ -34,3 +34,16 @@ position: relative;
 .swiper-pagination-bullet-active {
   background-color: #ff0000;
 } */
+
+
+
+.custom-button-next,
+.custom-button-prev {
+  width: 40px;
+  height: 40px;
+  background-color: white !important;
+  cursor: pointer;
+  color: #ffffff !important; /* Text color */
+  font-size: 24px; /* Text size */
+  border-radius: 50%; /* Make it round */
+}
