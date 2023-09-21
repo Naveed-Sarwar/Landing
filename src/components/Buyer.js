@@ -34,7 +34,7 @@ const Buyer = () => {
     return (
         <div>
          
-            <div className='grid grid-cols-12  lg:gap-20'>
+            <div className='grid grid-cols-12 lg:gap-20'>
                 {
                     show ? <>
                         <div className='col-span-12  lg:col-span-8'>
