@@ -303,15 +303,15 @@ const Buyer = () => {
 
                                                     </div>
                                                     <div className='flex-auto pt-4 pl-4 w-64'>
-                                                        <p className='text-lg'>RESIDENCIAL</p>
+                                                        <p className='text-lg'>Vacation Homes</p>
                                                         <h1 className='text-4xl font-bold'>Kamran Line</h1>
 
-                                                        <div className='absolute bottom-4'>
-                                                            <p className='text-sm text-[#8f8f8f]'>Offerings</p>
-                                                            <div className='flex pb-2 pt-1 gap-x-2'>
+                                                        <div className='absolute bottom-8'>
+                                                            {/* <p className='text-sm text-[#8f8f8f]'>Offerings</p> */}
+                                                            {/* <div className='flex pb-2 pt-1 gap-x-2'>
                                                                 <div className='bg-[#e0dfdf] rounded-md px-2 text-sm flex items-center justify-center' >1</div>
                                                                 <div className='bg-[#e0dfdf] rounded-md px-2 text-sm flex items-center justify-center' >ALTA Developers</div>
-                                                            </div>
+                                                            </div> */}
                                                             <p className='text-sm text-[#8f8f8f]'>Description</p>
                                                             <p>We believe in a sustainable future where real estate enhances our lives and becomes a blueprint for better living. All financed using our Invest Web3 fundraising platform.</p>
                                                         </div>
