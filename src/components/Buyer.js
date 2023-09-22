@@ -22,6 +22,19 @@ import { AiFillPropertySafety, AiTwotoneTool } from "react-icons/ai";
 import { FaTools } from "react-icons/fa";
 import { FiDollarSign } from "react-icons/fi";
 import { SiArtixlinux } from "react-icons/si";
+import { useRouter } from 'next/router';
+import { data } from './constants/data';
+
+import ImageHouse from "../../assets/image.jpeg";
+import SecondCard from "../../assets/secondCard.png";
+import ThirdCard from "../../assets/thirdCard.jpeg";
+import FourCard from "../../assets/fourCard.webp";
+import FiveCard from "../../assets/fiveCard.jpeg";
+import SixCard from "../../assets/sixCard.jpeg";
+import SevenCard from "../../assets/sevenCard.jpg";
+import EightCard from "../../assets/eightCard.jpg";
+import NineCard from "../../assets/nineCard.jpg";
+import TenCard from "../../assets/tenCard.jpg";
 const Buyer = () => {
 
     const [show, setShow] = useState(false);
@@ -33,12 +46,12 @@ const Buyer = () => {
     const [documents, setDocuments] = useState(false);
     return (
         <div>
-         
+
             <div className='grid grid-cols-12 lg:gap-20'>
                 {
                     show ? <>
                         <div className='col-span-12  lg:col-span-8'>
-                        <Image src={Plot} className='hidden lg:flex' />
+                            <Image src={Plot} className='hidden lg:flex' />
                             <p className='text-4xl py-2 font-medium pl-4 lg:pl-0 text-white'>APN 174-783 Hyderabad ,Telangana</p>
                             <Image src={Plot} className='lg:hidden flex' />
                             <div>
@@ -263,15 +276,55 @@ const Buyer = () => {
                         <SliderTwo />
 
                     </> :
-                        <div className='col-span-12 lg:col-span-10 pt-16'>
-                            <div className='lg:mr-16'>
+                        <div className='col-span-12 lg:col-span-12 mx-10 pt-16'>
+                            <div>
                                 <LandMap />
                             </div>
-                            <div className='flex flex-col lg:justify-start justify-center lg:items-start items-center'>
+                            {/* <div className='flex flex-col lg:justify-start justify-center lg:items-start items-center'>
                                 <div onClick={() => setShow(!show)}>
                                     <BuyLandCard />
                                 </div>
-                            </div>
+                            </div> */}
+
+                            <>
+                                <div className='grid lg:grid-cols-1 mt-6 gap-x-4'>
+                                    {
+                                        data?.map((item, index) => {
+
+
+                                            const router = useRouter();
+                                            const handleClick = () => {
+                                                router.push(`/property/${index}`); // Navigate to the dynamic property route
+                                            };
+                                            return <>
+                                                <div className='flex relative rounded-lg bg-white my-2'>
+                                                    <div className='flex-auto h-64 w-32'>
+                                                        {index == 0 ? <Image className='h-full' src={ImageHouse} /> : index == 1 ? <Image className='h-full' src={SecondCard} /> : index == 2 ? <Image className='h-full' src={ThirdCard} /> : index == 3 ? <Image className='h-full' src={FourCard} /> : index == 4 ? <Image className='h-full' src={FiveCard} /> : index == 5 ? <Image className='h-full object-cover' src={SixCard} /> : index == 6 ? <Image className='h-full' src={SevenCard} /> : index == 7 ? <Image className='h-full' src={EightCard} /> : index == 8 ? <Image className='h-full' src={NineCard} /> : <Image className='h-full' src={TenCard} />}
+
+                                                    </div>
+                                                    <div className='flex-auto pt-4 pl-4 w-64'>
+                                                        <p className='text-lg'>RESIDENCIAL</p>
+                                                        <h1 className='text-4xl font-bold'>Kamran Line</h1>
+
+                                                        <div className='absolute bottom-4'>
+                                                            <p className='text-sm text-[#8f8f8f]'>Offerings</p>
+                                                            <div className='flex pb-2 pt-1 gap-x-2'>
+                                                                <div className='bg-[#e0dfdf] rounded-md px-2 text-sm flex items-center justify-center' >1</div>
+                                                                <div className='bg-[#e0dfdf] rounded-md px-2 text-sm flex items-center justify-center' >ALTA Developers</div>
+                                                            </div>
+                                                            <p className='text-sm text-[#8f8f8f]'>Description</p>
+                                                            <p>We believe in a sustainable future where real estate enhances our lives and becomes a blueprint for better living. All financed using our Invest Web3 fundraising platform.</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </>
+
+
+                                        })
+                                    }
+                                </div>
+                            </>
                         </div>
                 }
             </div>
