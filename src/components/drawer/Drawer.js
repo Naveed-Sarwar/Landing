@@ -26,8 +26,8 @@ import Vacation from '@/components/VacationRentals';
 
 
 export const list = [
-    { title: "Invest", icon: <FiDollarSign fontSize={24} />, route: "https://property-page-blue.vercel.app/" },
-    { title: "Vacation", icon: <FiDollarSign fontSize={24} />, route: "/Vacation" },
+    // { title: "Invest", icon: <FiDollarSign fontSize={24} />, route: "https://property-page-blue.vercel.app/" },
+    { title: "Property", icon: <FiDollarSign fontSize={24} />, route: "/property" },
     { title: "Buy Land", icon: <BiSolidLandscape fontSize={24} />, route: "/Buy" },
     { title: "Investment Analyzer", icon: <SiArtixlinux fontSize={24} />, route: "/Investment" },
     { title: "Portfolio", icon: <BsFillPersonFill fontSize={24} />, route: "https://profound-flea.10web.site/" },

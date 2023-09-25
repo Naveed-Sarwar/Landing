@@ -13,7 +13,10 @@ module.exports = {
 
       backgroundImage: {
         "proper": "url('../../assets/property.jpeg')",
-        "hill": "url('../../assets/hill.png')",
+        "hill": "url('../../assets/propertyOne.webp')",
+        "hillSecond": "url('../../assets/2.1.webp')",
+        "hillThird": "url('../../assets/propertyThree.webp')",
+
       }
     },
   },

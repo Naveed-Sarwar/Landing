@@ -13,9 +13,9 @@ import FourCard from "../../assets/fourCard.webp";
 import FiveCard from "../../assets/fiveCard.jpeg";
 import SixCard from "../../assets/sixCard.jpeg";
 import SevenCard from "../../assets/sevenCard.jpg";
-import EightCard from "../../assets/eightCard.jpg";
-import NineCard from "../../assets/nineCard.jpg";
-import TenCard from "../../assets/tenCard.jpg";
+import EightCard from "../../assets/propertyOne.webp";
+import NineCard from "../../assets/2.1.webp";
+import TenCard from "../../assets/propertyThree.webp";
 
 const VacationRentals = () => {
 
@@ -26,7 +26,7 @@ const VacationRentals = () => {
     <div className='mx-4'>
       <div className='grid lg:grid-cols-2 gap-x-4'>
         <div className='flex flex-col order-2 lg:order-1 px-4 justify-center'>
-          <h1 className='text-white py-3 font-bold text-4xl'>Vacation Rentals</h1>
+          <h1 className='text-white py-3 font-bold text-4xl'>Property Rentals</h1>
           <p className='text-xl text-white'>Furnished properties rented out for shorter days (days , weeks or months) on platforms like AirBnb & VRBO. Diversity your portfolio with vacation rentals.</p>
         </div>
         <div className='order-1 lg:order-2'>
@@ -37,8 +37,6 @@ const VacationRentals = () => {
       <div className='grid lg:grid-cols-1 mt-6 gap-x-4'>
         {
           data?.map((item, index) => {
-
-
             const router = useRouter();
             const handleClick = () => {
               router.push(`/property/${index}`); // Navigate to the dynamic property route
@@ -59,14 +57,14 @@ const VacationRentals = () => {
                 {index == 0 ? <Image className='h-64' src={ImageHouse} /> : index == 1 ? <Image className='h-64' src={SecondCard} /> : index == 2 ? <Image className='h-64' src={ThirdCard} /> : index == 3 ? <Image className='h-64' src={FourCard} /> : index == 4 ? <Image className='h-64' src={FiveCard} /> : index == 5 ? <Image className='h-64' src={SixCard} /> : index == 6 ? <Image className='h-64' src={SevenCard} /> : index == 7 ? <Image className='h-64' src={EightCard} /> : index == 8 ? <Image className='h-64' src={NineCard} /> : <Image className='h-64' src={TenCard} />}
               </div> */}
 
+              <Link href={{ pathname: item.route }} key={index}>
               <div className='flex relative rounded-lg bg-white my-2'>
                 <div className='flex-auto h-64 w-32'>
                   {index == 0 ? <Image className='h-full' src={ImageHouse} /> : index == 1 ? <Image className='h-full' src={SecondCard} /> : index == 2 ? <Image className='h-full' src={ThirdCard} /> : index == 3 ? <Image className='h-full' src={FourCard} /> : index == 4 ? <Image className='h-full' src={FiveCard} /> : index == 5 ? <Image className='h-full object-cover' src={SixCard} /> : index == 6 ? <Image className='h-full' src={SevenCard} /> : index == 7 ? <Image className='h-full' src={EightCard} /> : index == 8 ? <Image className='h-full' src={NineCard} /> : <Image className='h-full' src={TenCard} />}
-
                 </div>
                 <div className='flex-auto pt-4 pl-4 w-64'>
                   <p className='text-lg'>RESIDENCIAL</p>
-                  <h1 className='text-4xl font-bold'>Kamran Line</h1>
+                  <h1 className='text-4xl font-bold'>{item?.title}</h1>
 
                   <div className='absolute bottom-4'>
                     <p className='text-sm text-[#8f8f8f]'>Offerings</p>
@@ -80,6 +78,7 @@ const VacationRentals = () => {
                 </div>
 
               </div>
+              </Link>
             </>
 
 

@@ -1,15 +1,16 @@
 import React from 'react'
-import One from "../../assets/1.webp";
-import Two from "../../assets/1.1.webp";
-import Three from "../../assets/1.2.webp";
-import Four from "../../assets/1.3.webp";
-import Five from "../../assets/1.4.webp";
-import Six from "../../assets/1.5.webp";
+import One from "../../assets/2.webp";
+import Two from "../../assets/propertyTwo.webp";
+import Three from "../../assets/2.2.webp";
+import Four from "../../assets/2.3.webp";
+import Five from "../../assets/2.4.webp";
+import Six from "../../assets/2.5.webp";
 import Image from 'next/image';
-const Hills = () => {
+const HillSecond = () => {
     return (
-        <>     <div className='bg-hill flex flex-col justify-center h-[90vh] px-10 '>
-            <h1 className='text-white leading-[50px] font-extrabold text-[50px]'>Bel Azur (5 Bedroom)<br />
+        <>     <div className='bg-hillSecond flex flex-col justify-center h-[90vh] px-10 '>
+          
+            <h1 className='text-white leading-[50px] font-extrabold text-[50px]'>AsanjA Titaly<br />
                 {/* <span className='pl-12'>CHASE HILLS</span> */}
             </h1>
             <p className='text-white font-medium mt-12 text-2xl'>Nestled adjacent to 170 acres of a majestic championship golf,
@@ -55,4 +56,4 @@ const Hills = () => {
     )
 }
 
-export default Hills;
+export default HillSecond;
