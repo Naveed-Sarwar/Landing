@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropertyImg from "../../../assets/property-img.jpeg";
 import Image from 'next/image';
 import Slider from '../slider/Slider';
@@ -6,38 +6,39 @@ import { useRouter } from 'next/router';
 import { data } from '../constants/data';
 
 import ImageHouse from "../../../assets/image.jpeg";
+import ImgPopup from '../imgPopup/ImgPopup';
 
 
 
-const PropertyCardTwo = () => {
+const PropertyCardTwo = ({ img }) => {
+    console.log(img);
     const router = useRouter();
     const { property } = router.query;
-    
-    
+    const [open, setOpen] = useState(false);
+
     const selectedIndex = parseInt(property);
-    
+
     // Retrieve the selected card's data
     const selectedCard = data[selectedIndex];
-    
+
     if (!selectedCard) {
-        // Handle the case where the index is invalid or missing
         return <p>Card not found.</p>;
-      }
+    }
     return (
-        <div>
+        <>
             <div className='lg:border-[1px] lg:w-[350px] relative hover:-mt-1 duration-200 ease-out'>
-                <div className=" rounded-t-lg" >
-                 <Image src={ImageHouse} />   {/* <Slider /> */}
+                <div onClick={() => setOpen(!open)} className="cursor-pointer rounded-t-lg" >
+                    <img src={img?.src} />
+                    {/* <Image src={ImageHouse} /> */}
+                    {/* <Slider /> */}
                 </div>
                 <div className='px-4 '>
-
                     <div className='flex -mt-16 lg:mt-2 justify-between items-center'>
                         <p className='font-semibold text-[#333333] text-[1.5rem]'>{selectedCard?.name}</p>
                         <p className='bg-[#64c464] font-bold text-[0.875rem] h-7 w-16 rounded-md items-center flex justify-center text-white'>Open</p>
                     </div>
                     <p className='pt-2'>{selectedCard?.location}</p>
                     <br />
-
                 </div>
                 <hr />
                 <div className='px-4'>
@@ -54,13 +55,15 @@ const PropertyCardTwo = () => {
                 <div className='flex py-6 px-4 justify-between'>
                     <p>86% funded</p>
                     <p className='text-[#8d8d8d]'>1703 investor</p>
-
                 </div>
                 <div class="lg:w-full h-2 mx-4 lg:mx-0  bg-gray-200 rounded-lg">
                     <div class="h-full bg-black rounded-lg" style={{ width: "86%" }}></div>
                 </div>
             </div>
-        </div>
+            {
+                open && <ImgPopup open={open} setOpen={setOpen} img={img?.src} />
+            }
+        </>
     )
 }
 

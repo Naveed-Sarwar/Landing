@@ -335,7 +335,7 @@ const Property = () => {
 
                 <div className='relative order-1 lg:order-3  col-span-12 lg:col-span-3 xl:col-span-4'>
                     <div className='relative lg:sticky lg:h-screen'>
-                        <PropertyCardTwo />
+                        <PropertyCardTwo img={selectedCard?.image} />
                     </div>
                 </div>
             </div>
@@ -345,13 +345,13 @@ const Property = () => {
                     <div className='lg:col-span-3'>
                     </div>
                     <div className='col-span-12 mx-0 lg:mx-9 lg:col-span-8'>
-                     <div ref={section5Ref}>
-                           <Faq />
-                           </div>
-                        <br /> 
-                      <div ref={section6Ref}>
-                             <AdditionalResources />
-                             </div>
+                        <div ref={section5Ref}>
+                            <Faq />
+                        </div>
+                        <br />
+                        <div ref={section6Ref}>
+                            <AdditionalResources />
+                        </div>
                         <br />
                         <br />
                     </div>
