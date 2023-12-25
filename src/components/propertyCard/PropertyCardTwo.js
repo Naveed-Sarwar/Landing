@@ -10,7 +10,7 @@ import ImgPopup from '../imgPopup/ImgPopup';
 
 
 
-const PropertyCardTwo = ({ img }) => {
+const PropertyCardTwo = ({ img , title }) => {
     console.log("img" , img);
     const router = useRouter();
     const { property } = router.query;
@@ -38,7 +38,7 @@ const PropertyCardTwo = ({ img }) => {
                 </div>
                 <div className='px-4 '>
                     <div className='flex mt-4 lg:mt-2 justify-between items-center'>
-                        <p className='font-semibold text-[#333333] text-[1.5rem]'>{selectedCard?.name}</p>
+                        <p className='font-semibold text-[#333333] text-[1.5rem]'>{selectedCard?.title}</p>
                         <p className='bg-[#64c464] font-bold text-[0.875rem] h-7 w-16 rounded-md items-center cursor-pointer flex justify-center text-white'>Open</p>
                     </div>
                     <p className='pt-2'>{selectedCard?.location}</p>

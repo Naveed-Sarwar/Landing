@@ -23,12 +23,13 @@ const Hills = () => {
                 <div className='h-2 w-40 bg-slate-300 my-4'></div>
                 <h1 className='text-black leading-[50px] font-extrabold text-[50px]'>ECONOMIC DETAILS</h1>
                 <br />
-                <div className='flex gap-x-2 py-1'><p className='font-bold'>City</p> <p>San Antonio</p></div>
-                <hr />     <div className='flex gap-x-2 py-1'><p className='font-bold'>State</p> <p>Taxes</p></div>
-                <hr />  <div className='flex gap-x-2 py-1'><p className='font-bold'>Country</p> <p>United States of America</p></div>
+                <div className='flex gap-x-2 py-1'><p className='font-bold'>City</p> <p>Assagao</p></div>
+                <hr />     <div className='flex gap-x-2 py-1'><p className='font-bold'>State</p> <p>Goa</p></div>
+                <hr />  <div className='flex gap-x-2 py-1'><p className='font-bold'>Country</p> <p>India</p></div>
                 <hr />   <div className='flex gap-x-2 py-1'><p className='font-bold'>Growth Rate</p> <p> Future job growth over the next ten years is predicted to be 39.6%, which is higher than the US average of 33.5%</p></div>
-                <hr />  <div className='flex gap-x-2 py-1'><p className='font-bold w-[850px]'>Economic Drivers</p> <p>The Greater San Antonio region's economy is driven by the services sector, manufacturing, and government, with a significant influence from the military, defense, and tourism industries. The region hosts four military bases, including three Air Force bases (Brooks, Lackland, and Randolph) and one Army post (Fort Sam Houston), which collectively employ around 74,500 military and civilian personnel and contribute approximately $4.9 billion to the local economy. The city's robust service sector, buoyed by its healthcare and business services, along with a thriving tourism industry attracting approximately 8 million visitors per year, creates an estimated $4 billion economic impact. Notably, the medical and biomedical industries form a large part of San Antonio's economy, with the South Texas Medical Center alone employing approximately 25,000 people. Other noteworthy contributors include the manufacturing sector, with significant contributions from Toyota's truck manufacturing plant, and various other industries producing items such as processed foods, airplane parts, storage batteries, semiconductors, and cement​.</p></div>
-                <hr />  <div className='flex py-2 gap-x-2'><p className='font-bold'>Population</p> <p>San Antonio is projected to reach a population of 2.68 million by July 2023, with the metropolitan area housing approximately 2.45 million people​​. Looking further ahead, the population of the San Antonio metro area is expected to surpass 4 million by 2050​.</p></div>
+                <hr />  <div className='flex gap-x-2 py-1'><p className='font-bold w-[850px]'>Economic Driver</p> <p>
+                    With two operational airports in the state, Dabolim Airport and MOPA airport, MOPA itself has the potential to double our footfalls”, Faldessai added. According to him, Goa is expecting more than 1.5 cr footfalls in the coming year, predicting to experience more than whatever achieved in the past. The numbers are coming as the capacity that MOPA airport is bringing, and the kind of linkages that it has formed with various international as well as domestic destinations is phenomenal.
+                </p></div>
 
             </div>
             <br />

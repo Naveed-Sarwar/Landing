@@ -335,7 +335,7 @@ const Property = () => {
 
                 <div className='relative order-1 lg:order-3  col-span-12 lg:col-span-3 xl:col-span-4'>
                     <div className='relative lg:sticky lg:h-screen'>
-                        <PropertyCardTwo img={selectedCard?.image} />
+                        <PropertyCardTwo img={selectedCard?.image} title={selectedCard.title} />
                     </div>
                 </div>
             </div>

@@ -46,16 +46,17 @@ export default function App() {
 
                 <SwiperSlide>
 
-                    <div className='overflow-hidden'>
+          <div className='overflow-hidden'>
                         <div className="bg-stockTwo my-4 lg:my-0 object-cover rounded-md h-80 bg-cover bg-center transition-all delay-150 transform hover:scale-105 duration-300">
-
                             <div className='flex items-center text-white px-4 justify-between'>
-                                <div><p className='absolute left-8 bottom-4 text-4xl'>Las Vages Naveda</p>
+                                <div>
+                                    <p className='absolute left-8 bottom-4 text-4xl'>Los Angeles</p>
                                 </div>
                                 <button className='absolute hover:bg-white w-20 h-10 hover:text-black hover:rounded-md hover:flex hover:items-center hover:justify-center right-8 bottom-4'>Trade</button>
                             </div>
                         </div>
                     </div>
+
 
                 </SwiperSlide>
 

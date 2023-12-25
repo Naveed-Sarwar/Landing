@@ -16,25 +16,84 @@ import { FaArrowDown, FaArrowUp, FaArrowsAltV, FaRocket } from 'react-icons/fa';
 import { GiRadioTower } from 'react-icons/gi';
 import Slider from '@/components/slider/Slider';
 import SliderFour from '@/components/slider/SliderFour';
+import Link from 'next/link';
 const Stokes = () => {
 
     const allMarkets = [
-        { title: "All Markets", icon: <SiMarketo fontSize={22} /> },
-        { title: "New", icon: <BsStars fontSize={22} /> },
-        { title: "Most Popular", icon: <FaRocket fontSize={22} /> },
-        { title: "Top Gainers", icon: <FaArrowUp fontSize={22} /> },
-        { title: "Top Losers", icon: <FaArrowDown fontSize={22} /> },
+        { title: "All Markets", icon: <SiMarketo fontSize={22} />, route: "/collections/allMarkets" },
+        { title: "New", icon: <BsStars fontSize={22} />, route: "/collections/allMarkets" },
+        { title: "Most Popular", icon: <FaRocket fontSize={22} />, route: "/collections/allMarkets" },
+        { title: "Top Gainers", icon: <FaArrowUp fontSize={22} />, route: "/collections/allMarkets" },
+        { title: "Top Losers", icon: <FaArrowDown fontSize={22} />, route: "/collections/allMarkets" },
         { title: "Most Volatile", icon: <FaArrowsAltV fontSize={22} /> },
-        { title: "France", icon: <GiRadioTower fontSize={22} /> },
+        { title: "France", icon: <GiRadioTower fontSize={22} />, route: "/collections/allMarkets" },
         { title: "USA", icon: <BsHouseDoorFill /> },
+
+    ]
+
+    const trendingMarkets = [
+        { num: 1, title: "Kondapur", city: "West Hederabad", price: "9,450", growthRate: "76.6", },
+        { num: 2, title: "Gachibowli", city: "West Hederabad", price: "9,050", growthRate: "86.6", },
+        { num: 3, title: "Nallagandla", city: "West Hederabad", price: "9,250", growthRate: "69.7", },
+        { num: 4, title: "Miyapur", city: "North Hederabad", price: "6,650", growthRate: "87.3", },
+        { num: 5, title: "Kotapet", city: "West Hederabad", price: "9,750", growthRate: "82.2", },
+        { num: 6, title: "Manikonda", city: "West Hederabad", price: "6,950", growthRate: "69.5", },
+        { num: 7, title: "Tellapur", city: "West Hederabad", price: "6,800", growthRate: "44.7", },
+        { num: 8, title: "Narsingi", city: "West Hederabad", price: "9,250", growthRate: "110.2", },
+        { num: 9, title: "Kompally", city: "Secunderabad", price: "5,600", growthRate: "55.6", },
+        { num: 10, title: "Pragathi Nagar", city: "North Hederabad", price: "6,350", growthRate: "86.8", },
+        { num: 11, title: "Bachupally", city: "North Hederabad", price: "5,700", growthRate: "100", },
+        { num: 12, title: "Nizampet", city: "North Hederabad", price: "5,100", growthRate: "50", },
+        { num: 13, title: "Hi Tech City", city: "West Hederabad", price: "11,950", growthRate: "91.2", },
+        { num: 14, title: "Kukatpally", city: "North Hederabad", price: "6,000", growthRate: "53.8", },
+        { num: 15, title: "Lingampally", city: "West Hederabad", price: "9,250", growthRate: "71.3", },
+        { num: 16, title: "Nanakramguda", city: "West Hederabad", price: "10,400", growthRate: "63.8", },
+        { num: 17, title: "Beeramguda", city: "North Hederabad", price: "4,150", growthRate: "50.9", },
+        { num: 18, title: "Financial District", city: "West Hederabad", price: "9,650", growthRate: "54.4", },
+        { num: 19, title: "Puppalaguda", city: "West Hederabad", price: "8,350", growthRate: "94.2", },
+        { num: 20, title: "Banjara Hills", city: "Central Hederabad", price: "10,050", growthRate: "46.7", },
+        { num: 21, title: "Hafeezpet", city: "West Hederabad", price: "7,500", growthRate: "50", },
+        { num: 22, title: "Madhapur", city: "West Hederabad", price: "10,900", growthRate: "69", },
+        { num: 23, title: "Sainikpuri", city: "Secunderabad", price: "5,500", growthRate: "71.9", },
+        { num: 24, title: "Attapur", city: "South Hederabad", price: "5,100", growthRate: "37.8", },
+        { num: 25, title: "Gopanpally", city: "West Hederabad", price: "8,450", growthRate: "101.2", },
+        { num: 26, title: "Madinaguda", city: "West Hederabad", price: "6,300", growthRate: "55.6", },
+        { num: 27, title: "LB Nagar", city: "East Hederabad", price: "5,500", growthRate: "57.1", },
+        { num: 28, title: "Mehdipatnam", city: "West Hederabad", price: "6,350", growthRate: "58.8", },
+        { num: 29, title: "Appa Junction", city: "West Hederabad", price: "7000", growthRate: "47.4", },
+        { num: 30, title: "Moti Nagar", city: "Central Hederabad", price: "9,750", growthRate: "97", },
+        { num: 31, title: "Jubilee Hills", city: "Central Hederabad", price: "11,250", growthRate: "71.8", },
+        { num: 32, title: "Begumpet", city: "Secunderabad", price: "7,750", growthRate: "68.5", },
+        { num: 33, title: "Shaikpet", city: "Central Hederabad", price: "8,850", growthRate: "68.6", },
+        { num: 34, title: "Gajulramaram", city: "North Hederabad", price: "4,950", growthRate: "45.6", },
+        { num: 35, title: "Khajaguda", city: "West Hederabad", price: "9,650", growthRate: "60.8", },
+        { num: 36, title: "Malkajgiri", city: "Secunderabad", price: "4,200", growthRate: "90.9", },
+        { num: 37, title: "Rejendra Nagar", city: "South Hyderabad", price: "7,200", growthRate: "50", },
+        { num: 38, title: "Pocharam", city: "East Hyderabad", price: "3,700", growthRate: "32.1", },
+        { num: 39, title: "Sanath Nagar", city: "North Hyderabad", price: "8,900", growthRate: "71.2", },
+        { num: 40, title: "Uppal", city: "East Hyderabad", price: "3,600", growthRate: "10.8", },
+        { num: 41, title: "5th Phase KPHB", city: "West Hyderabad", price: "9,900", growthRate: "41.4", },
+        { num: 42, title: "Tarnaka", city: "Secunderabad", price: "6,450", growthRate: "84.3", },
+        { num: 43, title: "Moosapet", city: "North Hyderabad", price: "7,100", growthRate: "56", },
+        { num: 44, title: "Serlingampally", city: "West Hyderabad", price: "5,900", growthRate: "29.7", },
+        { num: 45, title: "Masab Tank", city: "Central Hyderabad", price: "6,000", growthRate: "50", },
+        { num: 46, title: "Neknampur", city: "West Hyderabad", price: "6,100", growthRate: "52.5", },
+        { num: 47, title: "P Janardhan Reddy", city: "West Hyderabad", price: "5,900", growthRate: "29.7", },
+        { num: 48, title: "Banglore Highway", city: "Rest of Hyderabad", price: "9,650", growthRate: "54.4", },
+    ]
+
+
+    const trendingMarketsDown = [
+        { num: 1, title: "Chandanagar", city: "West Hederabad", price: "5,000", growthRate: "2.9", },
+        { num: 2, title: "KPHB", city: "West Hederabad", price: "5,500", growthRate: "2.6", },
 
     ]
     return (
         <div className='bg-black min-h-screen px-4 lg:px-28'>
             <br />
-            <br /> 
-       <SliderFour />     
-     {/* <div className='grid lg:grid-cols-2  gap-x-12'>
+            <br />
+            <SliderFour />
+            {/* <div className='grid lg:grid-cols-2  gap-x-12'>
                 <div className="bg-stockOne overflow-hidden my-4 lg:my-0 relative rounded-md h-80 bg-cover bg-center transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-300 ">
                     <div className='flex items-center text-white px-4 justify-between'>
                         <div><p className='absolute left-8 bottom-4 text-4xl'>Los Angeles</p>
@@ -61,10 +120,13 @@ const Stokes = () => {
             <div className='grid grid-cols-3 lg:flex justify-between my-4 items-center py-4'>
                 {allMarkets?.map((item) => {
                     return <div className='text-white py-2'>
-                        <div className='flex gap-x-2 cursor-pointer items-center flex-row'>
-                            <p>{item?.icon}</p>
-                            <p>{item?.title}</p>
+                        <Link href={{ pathname: item.route }} > <div className='flex gap-x-2 cursor-pointer items-center flex-row'>
+
+                            <p>{item.icon}</p>
+                            <p>{item.title}</p>
+
                         </div>
+                        </Link>
                     </div>
                 }
                 )}
@@ -86,196 +148,58 @@ const Stokes = () => {
                     <p className='text-white text-2xl py-4'>Trending Up</p>
                     <hr className='border-[#494949] my-2' />
 
-                    <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4 rounded-md justify-between  py-4 my-2'>
-                        <div className='flex flex-col text-white'>
-                            <div className='flex items-center gap-x-8'>
-                                <p className='text-lg text-gray-400'>1</p>
-                                <div>
-                                    <p className='text-2xl font-medium'>Las Vegas</p>
-                                    <p>Nevada</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex flex-col'>
-                            <div className='text-[#4fe3b2] text-2xl flex items-center'>
-                                <FiArrowUpRight fontSize={26} />
-                                <p className='font-medium'>3.95%</p>
-                            </div>
-                            <p className='text-gray-400 flex justify-end'>$258.00</p>
-                        </div>
-                    </div>       <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4 rounded-md justify-between  py-4 my-2'>
-                        <div className='flex flex-col text-white'>
-                            <div className='flex items-center gap-x-8'>
-                                <p className='text-lg text-gray-400'>2</p>
-                                <div>
-                                    <p className='text-2xl font-medium'>Phoenix</p>
-                                    <p>Arizona</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex flex-col'>
-                            <div className='text-[#4fe3b2] text-2xl flex items-center'>
-                                <FiArrowUpRight fontSize={26} />
-                                <p className='font-medium'>2.58%</p>
-
-                            </div>
-                            <p className='text-gray-400 flex justify-end'>$287.93</p>
-                        </div>
-                    </div>
-                    <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4  rounded-md justify-between py-4 my-2'>
-                        <div className='flex flex-col text-white'>
-                            <div className='flex items-center gap-x-8'>
-                                <p className='text-lg text-gray-400'>3</p>
-                                <div>
-                                    <p className='text-2xl font-medium'>Brooklyn</p>
-                                    <p>New York</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex flex-col'>
-                            <div className='text-[#4fe3b2] text-2xl flex items-center'>
-                                <FiArrowUpRight fontSize={26} />
-                                <p className='font-medium'>1.99%</p>
-
-                            </div>
-                            <p className='text-gray-400 flex justify-end'>$639.46</p>
-                        </div>
-                    </div>       <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4 rounded-md justify-between  py-4 my-2'>
-                        <div className='flex flex-col text-white'>
-                            <div className='flex items-center gap-x-8'>
-                                <p className='text-lg text-gray-400'>4</p>
-                                <div>
-                                    <p className='text-2xl font-medium'>Denver</p>
-                                    <p>New York</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex flex-col'>
-                            <div className='text-[#4fe3b2] text-2xl flex items-center'>
-                                <FiArrowUpRight fontSize={26} />
-                                <p className='font-medium'>1.63%</p>
-
-                            </div>
-                            <p className='text-gray-400 flex justify-end'>$455.71</p>
-                        </div>
-                    </div>       <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4 rounded-md justify-between  py-4 my-2'>
-                        <div className='flex flex-col text-white'>
-                            <div className='flex items-center gap-x-8'>
-                                <p className='text-lg text-gray-400'>5</p>
-                                <div>
-                                    <p className='text-2xl font-medium'>Austin</p>
-                                    <p>Texas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex flex-col'>
-                            <div className='text-[#4fe3b2] text-2xl flex items-center'>
-                                <FiArrowUpRight fontSize={26} />
-                                <p className='font-medium'>0.80%</p>
-
-                            </div>
-                            <p className='text-gray-400 flex justify-end'>$327.43</p>
-                        </div>
+                    <div >
+                        {
+                            trendingMarkets?.map((item, index) => {
+                                return <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4 rounded-md justify-between  py-4 my-2'>
+                                    <div className='flex flex-col text-white'>
+                                        <div className='flex items-center gap-x-8'>
+                                            <p className='text-lg text-gray-400'>{item?.num}</p>
+                                            <div>
+                                                <p className='text-lg lg:text-2xl font-medium'>{item?.title}</p>
+                                                <p>{item?.city}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='flex flex-col'>
+                                        <div className='text-[#4fe3b2] text-lg lg:text-2xl flex items-center'>
+                                            <FiArrowUpRight fontSize={26} />
+                                            <p className='font-medium'>{item?.growthRate}%</p>
+                                        </div>
+                                        <p className='text-gray-400 flex justify-end'>₹{item?.price}/ sq.ft</p>
+                                    </div>  </div>
+                            })
+                        }
                     </div>
                 </div>
                 <div>
                     <p className='text-white text-2xl py-4'>Trending Down</p>
                     <hr className='border-[#494949] my-2' />
-                    <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4 rounded-md justify-between py-4 my-2'>
-                        <div className='flex flex-col text-white'>
-                            <div className='flex items-center gap-x-8'>
-                                <p className='text-lg text-gray-400'>1</p>
-                                <div>
-                                    <p className='text-2xl font-medium'>Boston</p>
-                                    <p>Massachusetts</p>
+
+                    {
+                        trendingMarketsDown?.map((item) => {
+                            return <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4 rounded-md justify-between py-4 my-2'>
+                                <div className='flex flex-col text-white'>
+                                    <div className='flex items-center gap-x-8'>
+                                        <p className='text-lg text-gray-400'>{item?.num}</p>
+                                        <div>
+                                            <p className='text-2xl font-medium'>{item?.title}</p>
+                                            <p>{item?.city}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='flex flex-col'>
+                                    <div className='text-[#fbc1c1] text-2xl flex items-center'>
+                                        <FiArrowUpRight fontSize={26} />
+                                        <p className='font-medium'>{item?.growthRate}%</p>
+
+                                    </div>
+                                    <p className='text-gray-400 flex justify-end'>₹{item?.price} /sq.ft</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className='flex flex-col'>
-                            <div className='text-[#fbc1c1] text-2xl flex items-center'>
-                                <FiArrowUpRight fontSize={26} />
-                                <p className='font-medium'>6.13%</p>
-
-                            </div>
-                            <p className='text-gray-400 flex justify-end'>$662.73</p>
-                        </div>
-                    </div>       <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4 rounded-md justify-between py-4 my-2'>
-                        <div className='flex flex-col text-white'>
-                            <div className='flex items-center gap-x-8'>
-                                <p className='text-lg text-gray-400'>2</p>
-                                <div>
-                                    <p className='text-2xl font-medium'>Chicago</p>
-                                    <p>lllinois</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex flex-col'>
-                            <div className='text-[#fbc1c1] text-2xl flex items-center'>
-                                <FiArrowUpRight fontSize={26} />
-                                <p className='font-medium'>5.277%</p>
-
-                            </div>
-                            <p className='text-gray-400 flex justify-end'>$251.86</p>
-                        </div>
-                    </div>
-                    <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4 rounded-md justify-between  py-4 my-2'>
-                        <div className='flex flex-col text-white'>
-                            <div className='flex items-center gap-x-8'>
-                                <p className='text-lg text-gray-400'>3</p>
-                                <div>
-                                    <p className='text-2xl font-medium'>Washigton</p>
-                                    <p>DC</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex flex-col'>
-                            <div className='text-[#fbc1c1] text-2xl flex items-center'>
-                                <FiArrowUpRight fontSize={26} />
-                                <p className='font-medium'>4.25%</p>
-
-                            </div>
-                            <p className='text-gray-400 flex justify-end'>$555.98</p>
-                        </div>
-                    </div>
-
-                    <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4 rounded-md justify-between py-4 my-2'>
-                        <div className='flex flex-col text-white'>
-                            <div className='flex items-center gap-x-8'>
-                                <p className='text-lg text-gray-400'>4</p>
-                                <div>
-                                    <p className='text-2xl font-medium'>Philadelphia</p>
-                                    <p>Pennsylvania</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex flex-col'>
-                            <div className='text-[#fbc1c1] text-2xl flex items-center'>
-                                <FiArrowUpRight fontSize={26} />
-                                <p className='font-medium'>4.10%</p>
-
-                            </div>
-                            <p className='text-gray-400 flex justify-end'>$200.18</p>
-                        </div>
-                    </div>
-                    <div className='flex items-center hover:bg-[#141414] cursor-pointer px-4 rounded-md justify-between py-4 my-2'>
-                        <div className='flex flex-col text-white'>
-                            <div className='flex items-center gap-x-8'>
-                                <p className='text-lg text-gray-400'>5</p>
-                                <div>
-                                    <p className='text-2xl font-medium'>lle-de-France</p>
-                                    <p>Francek</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex flex-col'>
-                            <div className='text-[#fbc1c1] text-2xl flex items-center'>
-                                <FiArrowUpRight fontSize={26} />
-                                <p className='font-medium'>3.64%</p>
-
-                            </div>
-                            <p className='text-gray-400 flex justify-end'>$5,762.74</p>
-                        </div>
-                    </div>
+                        })
+                    }
+                
                 </div>
             </div>
             <br />
@@ -305,7 +229,7 @@ const Stokes = () => {
 
                 </div>
 
-                <div className=''>
+                <div>
                     <svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 393 150"><rect x="0" y="0" width="393" height="150" fill="transparent" rx="14"></rect><defs><linearGradient id="area-gradient-5826765" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4fe3b2" stop-opacity="0.2"></stop><stop offset="100%" stop-color="#4fe3b2" stop-opacity="0"></stop></linearGradient></defs><path class="visx-area-closed" d="M0,74.99999999999923C1.4395604395604398,75.2678571428569,2.8791208791208796,75.53571428571456,4.318681318681319,75.53571428571456C5.758241758241759,75.53571428571456,7.197802197802199,75.53571428571456,8.637362637362639,75.53571428571456C10.076923076923078,75.53571428571456,11.516483516483516,75.53571428571456,12.956043956043956,75.53571428571456C14.395604395604396,75.53571428571456,15.835164835164838,69.10714285714285,17.274725274725277,69.10714285714285C18.714285714285715,69.10714285714285,20.153846153846153,69.10714285714285,21.59340659340659,69.10714285714285C23.032967032967033,69.10714285714285,24.47252747252747,68.57142857142904,25.912087912087912,68.57142857142904C27.351648351648354,68.57142857142904,28.791208791208792,69.10714285714285,30.230769230769234,69.10714285714285C31.670329670329675,69.10714285714285,33.10989010989012,69.10714285714285,34.549450549450555,69.10714285714285C35.98901098901099,69.10714285714285,37.42857142857143,69.10714285714285,38.86813186813187,69.10714285714285C40.30769230769231,69.10714285714285,41.747252747252745,69.10714285714285,43.18681318681318,69.10714285714285C44.62637362637362,69.10714285714285,46.065934065934066,69.46428571428513,47.505494505494504,69.64285714285664C48.94505494505494,69.82142857142816,50.38461538461539,70.17857142857198,51.824175824175825,70.17857142857198C53.26373626373626,70.17857142857198,54.7032967032967,70.17857142857198,56.14285714285714,70.17857142857198C57.582417582417584,70.17857142857198,59.02197802197802,70.17857142857198,60.46153846153847,70.17857142857198C61.901098901098905,70.17857142857198,63.34065934065934,66.33928571428568,64.78021978021978,64.28571428571408C66.21978021978022,62.23214285714247,67.65934065934067,57.85714285714235,69.09890109890111,57.85714285714235C70.53846153846155,57.85714285714235,71.97802197802199,57.85714285714235,73.41758241758242,57.85714285714235C74.85714285714286,57.85714285714235,76.2967032967033,54.01785714285731,77.73626373626374,51.964285714285964C79.17582417582418,49.91071428571462,80.61538461538461,47.678571428571495,82.05494505494505,45.535714285714256C83.49450549450549,43.39285714285702,84.93406593406593,41.16071428571415,86.37362637362637,39.10714285714255C87.8131868131868,37.05357142857094,89.25274725274726,35.17857142857034,90.6923076923077,33.21428571428463C92.13186813186813,31.249999999998916,93.57142857142857,27.321428571428257,95.01098901098901,27.321428571428257C96.45054945054945,27.321428571428257,97.89010989010988,27.321428571428257,99.32967032967032,27.321428571428257C100.76923076923076,27.321428571428257,102.20879120879121,33.57142857142768,103.64835164835165,34.285714285713766C105.08791208791209,34.99999999999985,106.52747252747254,34.64285714285681,107.96703296703298,35.3571428571429C109.40659340659342,36.07142857142898,110.84615384615384,39.64285714285763,112.28571428571428,41.785714285714604C113.72527472527472,43.928571428571594,115.16483516483517,46.07142857142781,116.6043956043956,48.21428571428479C118.04395604395604,50.357142857141774,119.4835164835165,54.28571428571294,120.92307692307693,54.6428571428565C122.36263736263737,55.00000000000005,123.8021978021978,54.82142857142828,125.24175824175823,55.17857142857183C126.68131868131867,55.535714285715386,128.12087912087912,59.91071428571447,129.56043956043956,62.14285714285734C131,64.3750000000002,132.43956043956044,66.42857142857207,133.87912087912088,68.57142857142904C135.3186813186813,70.71428571428604,136.75824175824178,72.94642857142787,138.19780219780222,74.99999999999923C139.63736263736266,77.05357142857056,141.07692307692307,78.92857142857144,142.5164835164835,80.89285714285715C143.95604395604394,82.85714285714289,145.3956043956044,84.6428571428563,146.83516483516485,86.78571428571354C148.27472527472528,88.92857142857076,149.71428571428572,93.75000000000057,151.15384615384616,93.75000000000057C152.5934065934066,93.75000000000057,154.03296703296704,93.75000000000057,155.47252747252747,93.75000000000057C156.9120879120879,93.75000000000057,158.35164835164835,103.39285714285688,159.7912087912088,106.60714285714248C161.23076923076923,109.82142857142807,162.67032967032966,110.98214285714258,164.1098901098901,113.03571428571418C165.54945054945054,115.08928571428578,166.98901098901098,118.92857142857208,168.42857142857142,118.92857142857208C169.86813186813185,118.92857142857208,171.3076923076923,118.92857142857208,172.74725274725273,118.92857142857208C174.18681318681317,118.92857142857208,175.62637362637363,118.92857142857208,177.06593406593407,118.92857142857208C178.5054945054945,118.92857142857208,179.94505494505495,115.08928571428578,181.3846153846154,113.03571428571418C182.82417582417582,110.98214285714258,184.26373626373626,106.60714285714248,185.7032967032967,106.60714285714248C187.14285714285714,106.60714285714248,188.58241758241758,106.60714285714248,190.02197802197801,106.60714285714248C191.46153846153845,106.60714285714248,192.90109890109892,102.23214285714212,194.34065934065936,100.17857142857076C195.7802197802198,98.12499999999943,197.2197802197802,96.33928571428571,198.65934065934064,94.28571428571438C200.09890109890108,92.23214285714302,201.53846153846155,89.99999999999991,202.97802197802199,87.85714285714266C204.41758241758242,85.71428571428542,205.85714285714286,83.66071428571381,207.2967032967033,81.42857142857093C208.73626373626374,79.19642857142806,210.17582417582418,74.46428571428544,211.6153846153846,74.46428571428544C213.05494505494505,74.46428571428544,214.49450549450552,74.46428571428544,215.93406593406596,74.46428571428544C217.3736263736264,74.46428571428544,218.81318681318683,74.10714285714315,220.25274725274727,73.92857142857163C221.6923076923077,73.75000000000011,223.13186813186812,73.39285714285631,224.57142857142856,73.39285714285631C226.010989010989,73.39285714285631,227.45054945054946,73.39285714285631,228.8901098901099,73.39285714285631C230.32967032967034,73.39285714285631,231.76923076923077,73.0357142857138,233.2087912087912,72.85714285714252C234.64835164835165,72.67857142857125,236.0879120879121,72.50000000000023,237.52747252747253,72.32142857142871C238.96703296703296,72.14285714285718,240.40659340659343,71.96428571428491,241.84615384615387,71.78571428571338C243.2857142857143,71.60714285714187,244.72527472527472,71.42857142857083,246.16483516483515,71.24999999999957C247.6043956043956,71.0714285714283,249.04395604395603,70.71428571428578,250.48351648351647,70.71428571428578C251.9230769230769,70.71428571428578,253.36263736263737,70.71428571428578,254.8021978021978,70.71428571428578C256.24175824175825,70.71428571428578,257.68131868131866,70.71428571428578,259.1208791208791,70.71428571428578C260.56043956043953,70.71428571428578,262,71.24999999999957,263.4395604395604,71.24999999999957C264.8791208791209,71.24999999999957,266.3186813186813,65.35714285714319,267.75824175824175,65.35714285714319C269.1978021978022,65.35714285714319,270.6373626373626,66.5178571428577,272.0769230769231,66.96428571428612C273.51648351648356,67.41071428571455,274.95604395604397,67.67857142857093,276.39560439560444,68.03571428571372C277.83516483516485,68.39285714285651,279.2747252747253,69.10714285714285,280.7142857142857,69.10714285714285C282.15384615384613,69.10714285714285,283.5934065934066,64.28571428571408,285.032967032967,64.28571428571408C286.4725274725275,64.28571428571408,287.9120879120879,64.64285714285636,289.35164835164835,64.82142857142787C290.7912087912088,64.99999999999939,292.2307692307692,65.35714285714319,293.6703296703297,65.35714285714319C295.1098901098901,65.35714285714319,296.54945054945057,65.35714285714319,297.989010989011,65.35714285714319C299.42857142857144,65.35714285714319,300.86813186813185,71.78571428571338,302.3076923076923,71.78571428571338C303.74725274725273,71.78571428571338,305.1868131868132,71.24999999999957,306.6263736263736,71.24999999999957C308.0659340659341,71.24999999999957,309.5054945054945,77.14285714285751,310.94505494505495,77.14285714285751C312.3846153846154,77.14285714285751,313.8241758241758,77.14285714285751,315.2637362637363,77.14285714285751C316.7032967032967,77.14285714285751,318.14285714285717,85.98214285714334,319.5824175824176,88.92857142857179C321.021978021978,91.87500000000023,322.46153846153845,94.82142857142817,323.90109890109886,94.82142857142817C325.34065934065933,94.82142857142817,326.78021978021974,94.46428571428564,328.2197802197802,94.28571428571438C329.65934065934067,94.10714285714312,331.0989010989011,94.01785714285772,332.53846153846155,93.75000000000057C333.97802197802196,93.48214285714342,335.4175824175824,93.03571428571448,336.85714285714283,92.67857142857144C338.2967032967033,92.3214285714284,339.7362637362637,92.3214285714284,341.1758241758242,91.60714285714232C342.6153846153846,90.89285714285624,344.05494505494505,84.46428571428552,345.49450549450546,84.107142857143C346.9340659340659,83.75000000000047,348.37362637362634,83.83928571428636,349.8131868131868,83.57142857142921C351.25274725274727,83.30357142857206,352.6923076923077,83.21428571428616,354.13186813186815,82.50000000000007C355.57142857142856,81.785714285714,357.010989010989,75.53571428571456,358.45054945054943,75.53571428571456C359.8901098901099,75.53571428571456,361.3296703296703,75.53571428571456,362.7692307692308,75.53571428571456C364.20879120879124,75.53571428571456,365.64835164835165,75.53571428571456,367.0879120879121,75.53571428571456C368.5274725274725,75.53571428571456,369.967032967033,75.89285714285711,371.4065934065934,76.07142857142837C372.84615384615387,76.24999999999964,374.2857142857143,76.42857142857063,375.72527472527474,76.60714285714216C377.16483516483515,76.78571428571368,378.6043956043956,77.14285714285751,380.04395604395603,77.14285714285751C381.4835164835165,77.14285714285751,382.9230769230769,77.14285714285751,384.3626373626374,77.14285714285751C385.80219780219784,77.14285714285751,387.24175824175825,70.71428571428578,388.6813186813187,70.71428571428578C390.1208791208791,70.71428571428578,391.5604395604396,70.71428571428578,393,70.71428571428578L393,150C391.5604395604396,150,390.1208791208791,150,388.6813186813187,150C387.24175824175825,150,385.80219780219784,150,384.3626373626374,150C382.9230769230769,150,381.4835164835165,150,380.04395604395603,150C378.6043956043956,150,377.16483516483515,150,375.72527472527474,150C374.2857142857143,150,372.84615384615387,150,371.4065934065934,150C369.967032967033,150,368.5274725274725,150,367.0879120879121,150C365.64835164835165,150,364.20879120879124,150,362.7692307692308,150C361.3296703296703,150,359.8901098901099,150,358.45054945054943,150C357.010989010989,150,355.57142857142856,150,354.13186813186815,150C352.6923076923077,150,351.25274725274727,150,349.8131868131868,150C348.37362637362634,150,346.9340659340659,150,345.49450549450546,150C344.05494505494505,150,342.6153846153846,150,341.1758241758242,150C339.7362637362637,150,338.2967032967033,150,336.85714285714283,150C335.4175824175824,150,333.97802197802196,150,332.53846153846155,150C331.0989010989011,150,329.65934065934067,150,328.2197802197802,150C326.78021978021974,150,325.34065934065933,150,323.90109890109886,150C322.46153846153845,150,321.021978021978,150,319.5824175824176,150C318.14285714285717,150,316.7032967032967,150,315.2637362637363,150C313.8241758241758,150,312.3846153846154,150,310.94505494505495,150C309.5054945054945,150,308.0659340659341,150,306.6263736263736,150C305.1868131868132,150,303.74725274725273,150,302.3076923076923,150C300.86813186813185,150,299.42857142857144,150,297.989010989011,150C296.54945054945057,150,295.1098901098901,150,293.6703296703297,150C292.2307692307692,150,290.7912087912088,150,289.35164835164835,150C287.9120879120879,150,286.4725274725275,150,285.032967032967,150C283.5934065934066,150,282.15384615384613,150,280.7142857142857,150C279.2747252747253,150,277.83516483516485,150,276.39560439560444,150C274.95604395604397,150,273.51648351648356,150,272.0769230769231,150C270.6373626373626,150,269.1978021978022,150,267.75824175824175,150C266.3186813186813,150,264.8791208791209,150,263.4395604395604,150C262,150,260.56043956043953,150,259.1208791208791,150C257.68131868131866,150,256.24175824175825,150,254.8021978021978,150C253.36263736263737,150,251.9230769230769,150,250.48351648351647,150C249.04395604395603,150,247.6043956043956,150,246.16483516483515,150C244.72527472527472,150,243.2857142857143,150,241.84615384615387,150C240.40659340659343,150,238.96703296703296,150,237.52747252747253,150C236.0879120879121,150,234.64835164835165,150,233.2087912087912,150C231.76923076923077,150,230.32967032967034,150,228.8901098901099,150C227.45054945054946,150,226.010989010989,150,224.57142857142856,150C223.13186813186812,150,221.6923076923077,150,220.25274725274727,150C218.81318681318683,150,217.3736263736264,150,215.93406593406596,150C214.49450549450552,150,213.05494505494505,150,211.6153846153846,150C210.17582417582418,150,208.73626373626374,150,207.2967032967033,150C205.85714285714286,150,204.41758241758242,150,202.97802197802199,150C201.53846153846155,150,200.09890109890108,150,198.65934065934064,150C197.2197802197802,150,195.7802197802198,150,194.34065934065936,150C192.90109890109892,150,191.46153846153845,150,190.02197802197801,150C188.58241758241758,150,187.14285714285714,150,185.7032967032967,150C184.26373626373626,150,182.82417582417582,150,181.3846153846154,150C179.94505494505495,150,178.5054945054945,150,177.06593406593407,150C175.62637362637363,150,174.18681318681317,150,172.74725274725273,150C171.3076923076923,150,169.86813186813185,150,168.42857142857142,150C166.98901098901098,150,165.54945054945054,150,164.1098901098901,150C162.67032967032966,150,161.23076923076923,150,159.7912087912088,150C158.35164835164835,150,156.9120879120879,150,155.47252747252747,150C154.03296703296704,150,152.5934065934066,150,151.15384615384616,150C149.71428571428572,150,148.27472527472528,150,146.83516483516485,150C145.3956043956044,150,143.95604395604394,150,142.5164835164835,150C141.07692307692307,150,139.63736263736266,150,138.19780219780222,150C136.75824175824178,150,135.3186813186813,150,133.87912087912088,150C132.43956043956044,150,131,150,129.56043956043956,150C128.12087912087912,150,126.68131868131867,150,125.24175824175823,150C123.8021978021978,150,122.36263736263737,150,120.92307692307693,150C119.4835164835165,150,118.04395604395604,150,116.6043956043956,150C115.16483516483517,150,113.72527472527472,150,112.28571428571428,150C110.84615384615384,150,109.40659340659342,150,107.96703296703298,150C106.52747252747254,150,105.08791208791209,150,103.64835164835165,150C102.20879120879121,150,100.76923076923076,150,99.32967032967032,150C97.89010989010988,150,96.45054945054945,150,95.01098901098901,150C93.57142857142857,150,92.13186813186813,150,90.6923076923077,150C89.25274725274726,150,87.8131868131868,150,86.37362637362637,150C84.93406593406593,150,83.49450549450549,150,82.05494505494505,150C80.61538461538461,150,79.17582417582418,150,77.73626373626374,150C76.2967032967033,150,74.85714285714286,150,73.41758241758242,150C71.97802197802199,150,70.53846153846155,150,69.09890109890111,150C67.65934065934067,150,66.21978021978022,150,64.78021978021978,150C63.34065934065934,150,61.901098901098905,150,60.46153846153847,150C59.02197802197802,150,57.582417582417584,150,56.14285714285714,150C54.7032967032967,150,53.26373626373626,150,51.824175824175825,150C50.38461538461539,150,48.94505494505494,150,47.505494505494504,150C46.065934065934066,150,44.62637362637362,150,43.18681318681318,150C41.747252747252745,150,40.30769230769231,150,38.86813186813187,150C37.42857142857143,150,35.98901098901099,150,34.549450549450555,150C33.10989010989012,150,31.670329670329675,150,30.230769230769234,150C28.791208791208792,150,27.351648351648354,150,25.912087912087912,150C24.47252747252747,150,23.032967032967033,150,21.59340659340659,150C20.153846153846153,150,18.714285714285715,150,17.274725274725277,150C15.835164835164838,150,14.395604395604396,150,12.956043956043956,150C11.516483516483516,150,10.076923076923078,150,8.637362637362639,150C7.197802197802199,150,5.758241758241759,150,4.318681318681319,150C2.8791208791208796,150,1.4395604395604398,150,0,150Z" fill="url(#area-gradient-5826765)"></path><path class="visx-linepath" d="M0,74.99999999999923C1.4395604395604398,75.2678571428569,2.8791208791208796,75.53571428571456,4.318681318681319,75.53571428571456C5.758241758241759,75.53571428571456,7.197802197802199,75.53571428571456,8.637362637362639,75.53571428571456C10.076923076923078,75.53571428571456,11.516483516483516,75.53571428571456,12.956043956043956,75.53571428571456C14.395604395604396,75.53571428571456,15.835164835164838,69.10714285714285,17.274725274725277,69.10714285714285C18.714285714285715,69.10714285714285,20.153846153846153,69.10714285714285,21.59340659340659,69.10714285714285C23.032967032967033,69.10714285714285,24.47252747252747,68.57142857142904,25.912087912087912,68.57142857142904C27.351648351648354,68.57142857142904,28.791208791208792,69.10714285714285,30.230769230769234,69.10714285714285C31.670329670329675,69.10714285714285,33.10989010989012,69.10714285714285,34.549450549450555,69.10714285714285C35.98901098901099,69.10714285714285,37.42857142857143,69.10714285714285,38.86813186813187,69.10714285714285C40.30769230769231,69.10714285714285,41.747252747252745,69.10714285714285,43.18681318681318,69.10714285714285C44.62637362637362,69.10714285714285,46.065934065934066,69.46428571428513,47.505494505494504,69.64285714285664C48.94505494505494,69.82142857142816,50.38461538461539,70.17857142857198,51.824175824175825,70.17857142857198C53.26373626373626,70.17857142857198,54.7032967032967,70.17857142857198,56.14285714285714,70.17857142857198C57.582417582417584,70.17857142857198,59.02197802197802,70.17857142857198,60.46153846153847,70.17857142857198C61.901098901098905,70.17857142857198,63.34065934065934,66.33928571428568,64.78021978021978,64.28571428571408C66.21978021978022,62.23214285714247,67.65934065934067,57.85714285714235,69.09890109890111,57.85714285714235C70.53846153846155,57.85714285714235,71.97802197802199,57.85714285714235,73.41758241758242,57.85714285714235C74.85714285714286,57.85714285714235,76.2967032967033,54.01785714285731,77.73626373626374,51.964285714285964C79.17582417582418,49.91071428571462,80.61538461538461,47.678571428571495,82.05494505494505,45.535714285714256C83.49450549450549,43.39285714285702,84.93406593406593,41.16071428571415,86.37362637362637,39.10714285714255C87.8131868131868,37.05357142857094,89.25274725274726,35.17857142857034,90.6923076923077,33.21428571428463C92.13186813186813,31.249999999998916,93.57142857142857,27.321428571428257,95.01098901098901,27.321428571428257C96.45054945054945,27.321428571428257,97.89010989010988,27.321428571428257,99.32967032967032,27.321428571428257C100.76923076923076,27.321428571428257,102.20879120879121,33.57142857142768,103.64835164835165,34.285714285713766C105.08791208791209,34.99999999999985,106.52747252747254,34.64285714285681,107.96703296703298,35.3571428571429C109.40659340659342,36.07142857142898,110.84615384615384,39.64285714285763,112.28571428571428,41.785714285714604C113.72527472527472,43.928571428571594,115.16483516483517,46.07142857142781,116.6043956043956,48.21428571428479C118.04395604395604,50.357142857141774,119.4835164835165,54.28571428571294,120.92307692307693,54.6428571428565C122.36263736263737,55.00000000000005,123.8021978021978,54.82142857142828,125.24175824175823,55.17857142857183C126.68131868131867,55.535714285715386,128.12087912087912,59.91071428571447,129.56043956043956,62.14285714285734C131,64.3750000000002,132.43956043956044,66.42857142857207,133.87912087912088,68.57142857142904C135.3186813186813,70.71428571428604,136.75824175824178,72.94642857142787,138.19780219780222,74.99999999999923C139.63736263736266,77.05357142857056,141.07692307692307,78.92857142857144,142.5164835164835,80.89285714285715C143.95604395604394,82.85714285714289,145.3956043956044,84.6428571428563,146.83516483516485,86.78571428571354C148.27472527472528,88.92857142857076,149.71428571428572,93.75000000000057,151.15384615384616,93.75000000000057C152.5934065934066,93.75000000000057,154.03296703296704,93.75000000000057,155.47252747252747,93.75000000000057C156.9120879120879,93.75000000000057,158.35164835164835,103.39285714285688,159.7912087912088,106.60714285714248C161.23076923076923,109.82142857142807,162.67032967032966,110.98214285714258,164.1098901098901,113.03571428571418C165.54945054945054,115.08928571428578,166.98901098901098,118.92857142857208,168.42857142857142,118.92857142857208C169.86813186813185,118.92857142857208,171.3076923076923,118.92857142857208,172.74725274725273,118.92857142857208C174.18681318681317,118.92857142857208,175.62637362637363,118.92857142857208,177.06593406593407,118.92857142857208C178.5054945054945,118.92857142857208,179.94505494505495,115.08928571428578,181.3846153846154,113.03571428571418C182.82417582417582,110.98214285714258,184.26373626373626,106.60714285714248,185.7032967032967,106.60714285714248C187.14285714285714,106.60714285714248,188.58241758241758,106.60714285714248,190.02197802197801,106.60714285714248C191.46153846153845,106.60714285714248,192.90109890109892,102.23214285714212,194.34065934065936,100.17857142857076C195.7802197802198,98.12499999999943,197.2197802197802,96.33928571428571,198.65934065934064,94.28571428571438C200.09890109890108,92.23214285714302,201.53846153846155,89.99999999999991,202.97802197802199,87.85714285714266C204.41758241758242,85.71428571428542,205.85714285714286,83.66071428571381,207.2967032967033,81.42857142857093C208.73626373626374,79.19642857142806,210.17582417582418,74.46428571428544,211.6153846153846,74.46428571428544C213.05494505494505,74.46428571428544,214.49450549450552,74.46428571428544,215.93406593406596,74.46428571428544C217.3736263736264,74.46428571428544,218.81318681318683,74.10714285714315,220.25274725274727,73.92857142857163C221.6923076923077,73.75000000000011,223.13186813186812,73.39285714285631,224.57142857142856,73.39285714285631C226.010989010989,73.39285714285631,227.45054945054946,73.39285714285631,228.8901098901099,73.39285714285631C230.32967032967034,73.39285714285631,231.76923076923077,73.0357142857138,233.2087912087912,72.85714285714252C234.64835164835165,72.67857142857125,236.0879120879121,72.50000000000023,237.52747252747253,72.32142857142871C238.96703296703296,72.14285714285718,240.40659340659343,71.96428571428491,241.84615384615387,71.78571428571338C243.2857142857143,71.60714285714187,244.72527472527472,71.42857142857083,246.16483516483515,71.24999999999957C247.6043956043956,71.0714285714283,249.04395604395603,70.71428571428578,250.48351648351647,70.71428571428578C251.9230769230769,70.71428571428578,253.36263736263737,70.71428571428578,254.8021978021978,70.71428571428578C256.24175824175825,70.71428571428578,257.68131868131866,70.71428571428578,259.1208791208791,70.71428571428578C260.56043956043953,70.71428571428578,262,71.24999999999957,263.4395604395604,71.24999999999957C264.8791208791209,71.24999999999957,266.3186813186813,65.35714285714319,267.75824175824175,65.35714285714319C269.1978021978022,65.35714285714319,270.6373626373626,66.5178571428577,272.0769230769231,66.96428571428612C273.51648351648356,67.41071428571455,274.95604395604397,67.67857142857093,276.39560439560444,68.03571428571372C277.83516483516485,68.39285714285651,279.2747252747253,69.10714285714285,280.7142857142857,69.10714285714285C282.15384615384613,69.10714285714285,283.5934065934066,64.28571428571408,285.032967032967,64.28571428571408C286.4725274725275,64.28571428571408,287.9120879120879,64.64285714285636,289.35164835164835,64.82142857142787C290.7912087912088,64.99999999999939,292.2307692307692,65.35714285714319,293.6703296703297,65.35714285714319C295.1098901098901,65.35714285714319,296.54945054945057,65.35714285714319,297.989010989011,65.35714285714319C299.42857142857144,65.35714285714319,300.86813186813185,71.78571428571338,302.3076923076923,71.78571428571338C303.74725274725273,71.78571428571338,305.1868131868132,71.24999999999957,306.6263736263736,71.24999999999957C308.0659340659341,71.24999999999957,309.5054945054945,77.14285714285751,310.94505494505495,77.14285714285751C312.3846153846154,77.14285714285751,313.8241758241758,77.14285714285751,315.2637362637363,77.14285714285751C316.7032967032967,77.14285714285751,318.14285714285717,85.98214285714334,319.5824175824176,88.92857142857179C321.021978021978,91.87500000000023,322.46153846153845,94.82142857142817,323.90109890109886,94.82142857142817C325.34065934065933,94.82142857142817,326.78021978021974,94.46428571428564,328.2197802197802,94.28571428571438C329.65934065934067,94.10714285714312,331.0989010989011,94.01785714285772,332.53846153846155,93.75000000000057C333.97802197802196,93.48214285714342,335.4175824175824,93.03571428571448,336.85714285714283,92.67857142857144C338.2967032967033,92.3214285714284,339.7362637362637,92.3214285714284,341.1758241758242,91.60714285714232C342.6153846153846,90.89285714285624,344.05494505494505,84.46428571428552,345.49450549450546,84.107142857143C346.9340659340659,83.75000000000047,348.37362637362634,83.83928571428636,349.8131868131868,83.57142857142921C351.25274725274727,83.30357142857206,352.6923076923077,83.21428571428616,354.13186813186815,82.50000000000007C355.57142857142856,81.785714285714,357.010989010989,75.53571428571456,358.45054945054943,75.53571428571456C359.8901098901099,75.53571428571456,361.3296703296703,75.53571428571456,362.7692307692308,75.53571428571456C364.20879120879124,75.53571428571456,365.64835164835165,75.53571428571456,367.0879120879121,75.53571428571456C368.5274725274725,75.53571428571456,369.967032967033,75.89285714285711,371.4065934065934,76.07142857142837C372.84615384615387,76.24999999999964,374.2857142857143,76.42857142857063,375.72527472527474,76.60714285714216C377.16483516483515,76.78571428571368,378.6043956043956,77.14285714285751,380.04395604395603,77.14285714285751C381.4835164835165,77.14285714285751,382.9230769230769,77.14285714285751,384.3626373626374,77.14285714285751C385.80219780219784,77.14285714285751,387.24175824175825,70.71428571428578,388.6813186813187,70.71428571428578C390.1208791208791,70.71428571428578,391.5604395604396,70.71428571428578,393,70.71428571428578" fill="transparent" stroke-linecap="round" stroke="#4fe3b2" stroke-width="3" width="393" height="150"></path><rect class="visx-bar" x="0" y="0" width="393" height="150" fill="transparent" rx="14"></rect></svg>
                     <div className='flex justify-between pt-2 text-white'>
                         <div className='flex items-center gap-x-8'>
@@ -363,10 +287,10 @@ const Stokes = () => {
                 </div>
                 <div className=''>
                     <div className='border-[1px] flex justify-between items-center rounded-lg border-[#2b2b2b] px-6 py-6'>
-                  <div>
-                     <p className='text-white'>Maximize Your Potential - Free</p>
-                        <p className='text-[#808080]'>Get up to 10x leverage on your trades</p>
-                        </div> 
+                        <div>
+                            <p className='text-white'>Maximize Your Potential - Free</p>
+                            <p className='text-[#808080]'>Get up to 10x leverage on your trades</p>
+                        </div>
                         <div className=''>
                             <button className='bg-white rounded-lg py-2 cursor-pointer px-6 text-black'>Get Advanced Features</button>
                         </div>
